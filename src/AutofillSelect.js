@@ -27,7 +27,7 @@ export default class AutofillSelect extends React.Component {
       nextState.value = {}
     }
     
-    this.props.onValueSetted(this.state.value)
+    this.props.onValueSetted(nextState.value)
     this.setState(nextState)
   }
   
