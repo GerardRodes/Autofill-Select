@@ -1,0 +1,117 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #192f3a;
+  color: white;
+  font-family: monospace;
+  font-weight: 100;
+  font-size: 16px;
+  
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
+  
+  .select-state {
+    text-align: left;
+    display: block;
+    margin: 0 auto;
+    width: 450px;
+    max-width: 100%;
+  }
+  
+  #root {
+    height: 100vh;
+    padding: 4rem 0;
+    text-align: center;
+    
+    .autofill-select {
+      display: inline-block;
+      overflow: hidden;
+      padding: 2rem;
+      perspective: 1000px;
+      
+      &[data-state="open"] {
+        overflow: visible;
+      }
+      
+      .wrapper-input {
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+        border-radius: 3px;
+        max-width: 70vw;
+        
+        .autofill-select-input {
+          background-color: #1a2125;
+          border: 0;
+          padding: 1rem 4rem;
+          font-size: 2em;
+          color: white;
+          font-family: monospace;
+          border-radius: 3px;
+          max-width: calc(100% - 8rem);
+          
+          @media (max-width: 768px) {
+            padding: 1rem 2rem 1rem 1rem;
+            max-width: calc(100% - 3rem);
+          }
+          
+          &:focus {
+            outline: 0;
+          }
+        }
+      
+        .arrow {
+          height: 70px;
+          width: 70px;
+          @media (max-width: 768px) {
+            height: 55px;
+            width: 55px;
+          }
+          svg {
+            fill: #546E7A;
+            margin: 0.75rem;
+            filter: drop-shadow( 0px -3px 6px #000 );
+          }
+        }
+      }
+      
+      
+      .autofill-select-options {
+        margin-top: -1.5rem;
+        border-radius: 3px;
+        text-align: left;
+        background-color: #263238;
+        padding: .25rem 0;
+        transition: all .35s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity .15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity: 0;
+        transform: translateZ(-250px);
+        transform-style: preserve-3d;
+        box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.5);
+        
+        &:focus {
+          outline: 0;
+        }
+        
+        .autofill-select-option {
+          padding: .5rem 1.5rem;
+          cursor: pointer;
+          transition: .1s ease-in;
+          background-color: #263238;
+          font-size: 1.5em;
+          
+          &:hover {
+            background-color: #37474F;
+          }
+        }
+      }
+      
+       
+      &[data-state="open"] {
+        .autofill-select-options {
+          opacity: 1;
+          transform: translateZ(0px);
+        }
+      }
+      
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.autofill-select {
+  position: relative; }
+  .autofill-select .wrapper-input {
+    position: relative;
+    display: inline-block; }
+    .autofill-select .wrapper-input .arrow {
+      display: inline-block;
+      transition: .3s ease;
+      transform: rotate(0deg);
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 21px;
+      height: 21px;
+      cursor: pointer; }
+  .autofill-select .autofill-select-options {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    left: 0;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    max-height: 50vh;
+    overflow-y: auto; }
+  .autofill-select[data-state="open"] .arrow {
+    transform: rotate(180deg); }
